@@ -13,7 +13,8 @@ print(f"Загрузка файла: {input_path}")
 df = pd.read_csv(input_path)
 
 #  Поиск текстовой колонки для фильтрации
-text_cols = df.select_dtypes(include=["object"]).columns
+text_cols = df.select_dtypes(include=["object", "string"]).columns
+# или прямо перечислите "str", если используете новую версию pandas
 
 if len(text_cols) > 0:
     text_col = text_cols[0]
