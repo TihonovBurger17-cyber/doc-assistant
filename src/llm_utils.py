@@ -17,12 +17,7 @@ def call_llm_api(
     json_mode: bool = False,
     api_key: str = None,
 ) -> str:
-    """Универсальная функция вызова LLM API (OpenAI API / vLLM / LocalAI)
-
-    Параметры:
-      - temperature: 0.0-0.2 для строгого JSON/анализа, 0.7+ для творчества
-      - json_mode: Если True, гарантирует ответ строго в формате JSON
-    """
+    
     key = api_key or os.getenv("OPENAI_API_KEY", "ВАШ_API_КЛЮЧ")
     client = openai.OpenAI(api_key=key)
 
